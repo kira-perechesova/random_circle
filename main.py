@@ -9,7 +9,6 @@ class Suprematism(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
-        # self.setMouseTracking(True)
         self.coords_ = []
         self.qp = QPainter()
         self.flag = False
@@ -28,7 +27,7 @@ class Suprematism(QWidget):
 
     def draw(self, status):
         R = random.randint(20, 100)
-        self.qp.setBrush(QColor('yellow'))
+        self.qp.setBrush(QColor(*[random.randint(0, 255) for _ in range(3)]))
         self.qp.drawEllipse(QPointF(self.coords_[0], self.coords_[1]), R, R)
 
     def initUI(self):
